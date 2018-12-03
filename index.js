@@ -239,11 +239,6 @@ Funnel.prototype.processFilters = function(inputPath) {
   // utilize change tracking from this._projectedIn
   const patches = this._processPatches(this._projectedIn.changes());
 
-  console.log(`----------------patches from ${this._name + (this._annotation != null ? ' (' + this._annotation + ')' : '')}`);
-  patches.forEach(patch => {
-    console.log(patch[0] + ' ' + patch[1].replace(/(\/|\\)$/, ''));
-  });
-
   instrumentation.stats.patches = patches.length;
 
   instrumentation.stop();
